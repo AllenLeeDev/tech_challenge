@@ -1,38 +1,33 @@
- # iHeartMedia - Music Lab - Code Challenge
+## Prerequisites
+Create a `.env` file inside of `./client` with: `PORT: 1717` <br>
+Make sure to have AWS SAM CLI installed
 
-Create a React application that shows a list of songs with their information and metrics displayed. The app should have at least **2 pages (views)**:
-A landing page, and a page to show data coming from an API.
+## Available Scripts
 
-- Everything should be written in JavaScript / Node.
+You have to start the AWS SAM server: 
 
-- Fork this repo and share the link when you are finished!
+### `cd ./sam-app`
+### `sam build`
+### `sam deploy --guided`
+### `sam local start-api`
 
-### UI Checklist
+Next you can start the React app:
 
-- Create a React App using functional based components and hooks. No class based components, please.
+### `cd ./client`
+### `yarn`
+### `yarn start`
 
-- Create 2 views ( pages ) using React Router.
 
-- Create a page that renders a table displaying a list songs coming from the API. Each row is a song, each column is a song attribute. 
+The songData.json is hosted in AWS S3 with the AWS CLI Configuration set up locally to authenticate my local machine. 
 
-- Employ **some** styling but it doesn't have to be much. You can use the styled-components library but do not use any other styling help.
+## File Structure Methodology
+Within React I followed the Atomic Design structure. Atomic Design is based off of grouping components by their size and complexity. 
 
-- Allow the user to scroll vertically and horizontally through columns and rows that go off screen.
+You will find an example of this `./client/src/components/atoms` in this case atoms holds the typing effect that is then passed to LandingPage. The typing effect cannot effectively be broken down any further so it is the smallest of the entire atomic structure. 
 
-- Allow the user to sort the order of the song rows by the column values.
+Runs the React app in the development mode.\
+Open [http://localhost:1717](http://localhost:1717) to view it in the browser.
 
-- It **does not** need to be mobile responsive.
+## Open GraphQL/Apollo playground
+Open [http://localhost:3000/dev/playground](http://localhost:1717/dev/playgound) to view it in the browser.
 
-### API Notes
-
-Store the included JSON file in an S3 bucket and use the AWS SAM CLI with a **node.js** lambda function to serve the frontend with the data.
-
-Authentication is not necessary.
-
-You do not need to deploy or host this anywhere.
-
-SAM CLI instructions: https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/serverless-sam-cli-install.html
-
-## Bonus
-
-Use GraphQL and/or Typescript

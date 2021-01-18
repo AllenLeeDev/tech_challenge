@@ -1,0 +1,19 @@
+AWSTemplateFormatVersion: 2010-09-09
+Description: sam-app
+Transform:
+- AWS::Serverless-2016-10-31
+Resources:
+  GraphQL:
+    Type: AWS::Serverless::Function
+    Properties:
+      Handler: src/handlers/gqlHandler.gqlHandler
+      Runtime: nodejs12.x
+      MemorySize: 500
+      Timeout: 1000
+      Events:
+        Requests:
+          Type: Api
+          Properties:
+            Path: /dev/{proxy+}
+            Method: ANY
+      CodeUri: GraphQL

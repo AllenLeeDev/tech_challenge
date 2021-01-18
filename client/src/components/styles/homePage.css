@@ -1,0 +1,23 @@
+.text-link {
+    display: flex;
+    flex: 2;
+    background-color: blue;
+    color: white;
+    padding: 1em 1.5em;
+    text-decoration: none;
+    text-transform: uppercase;
+    flex-direction: row;
+    justify-content: space-evenly;
+} 
+
+.text-link:hover {
+    color: black;
+    cursor: pointer
+}
+
+li {
+    list-style: none;
+    display: flex;
+    flex: inherit;
+    justify-content: center;
+}

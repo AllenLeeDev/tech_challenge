@@ -1,0 +1,10 @@
+version = 0.1
+[default]
+[default.deploy]
+[default.deploy.parameters]
+stack_name = "techchallenge"
+s3_bucket = "aws-sam-cli-managed-default-samclisourcebucket-1a4z7cwjj5xol"
+s3_prefix = "techchallenge"
+region = "us-east-1"
+confirm_changeset = true
+capabilities = "CAPABILITY_IAM"
