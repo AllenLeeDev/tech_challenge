@@ -11,6 +11,7 @@ import "./components/styles/homePage.css"
 
 const App = () => {
   return (
+    
    <Router>
      <div>
        <ul>
@@ -18,7 +19,7 @@ const App = () => {
            <Link to="/">Home</Link>
          </li>
          <li>
-           <Link to="/songs">Songs</Link>
+           <Link  to="/songs">Songs</Link>
          </li>
        </ul>
        <Switch>
